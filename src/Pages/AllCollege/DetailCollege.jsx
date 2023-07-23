@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 
-const CardDetail = () => {
+const DetailCollege = () => {
   const details = useLoaderData();
   console.log(details);
 
@@ -18,16 +18,20 @@ const CardDetail = () => {
             <span className="font-semibold text-lg">Admission: </span>
             {details.admission_date}
           </p>
+          <p className="text-black">
+            <span className="font-semibold text-lg">Rating :</span>{" "}
+            {details.rating}
+          </p>
+          <p className="text-black">
+            <span className="font-semibold text-lg">Research Number:</span>{" "}
+            {details.research}
+          </p>
           <ul>
             <span className="font-semibold text-lg">Events Details: </span>
             <li>Cultural Fest- {details.event1}</li>
             <li> Career Fair- {details.event2}</li>
             <li>Graduation Ceremony- {details.event3}</li>
           </ul>
-          <p className="text-black">
-            <span className="font-semibold text-lg">Research Works :</span>{" "}
-            {details.research_history}
-          </p>
           <p className="text-black">
             <span className="font-semibold text-lg">Sports Detail: </span>
             {details.sports_detail}
@@ -38,4 +42,4 @@ const CardDetail = () => {
   );
 };
 
-export default CardDetail;
+export default DetailCollege;

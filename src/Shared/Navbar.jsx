@@ -1,6 +1,14 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Pages/Provider/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
   return (
     <div className="navbar z-10 bg-opacity-30 max-w-screen-xl bg-black lg:text-white">
       <div className="navbar-start">
@@ -29,17 +37,17 @@ const Navbar = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link>Colleges</Link>
+              <Link to="/college">Colleges</Link>
             </li>
             <li>
-              <Link>Admission</Link>
+              <Link to="/admission">Admission</Link>
             </li>
             <li>
-              <Link>My College</Link>
+              <Link to="/myCollege">My College</Link>
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl text-white uppercase">
+        <a className="btn btn-ghost text-2xl text-purple-800 uppercase">
           College Booking
         </a>
       </div>
@@ -49,20 +57,32 @@ const Navbar = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link>Colleges</Link>
+            <Link to="/college">Colleges</Link>
           </li>
           <li>
-            <Link>Admission</Link>
+            <Link to="/admission">Admission</Link>
           </li>
           <li>
-            <Link>My College</Link>
+            <Link to="/myCollege">My College</Link>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <Link className="btn btn-primary" to="/login">
-          Login
-        </Link>
+        {user ? (
+          <>
+            <a href="" className="uppercase text-black">
+              {user.displayName}
+            </a>
+
+            <Link className="btn btn-primary ml-5" onClick={handleLogOut}>
+              Logout
+            </Link>
+          </>
+        ) : (
+          <Link className="btn btn-primary" to="/login">
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );

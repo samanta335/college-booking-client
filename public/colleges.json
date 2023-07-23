@@ -11,7 +11,7 @@
     "research": " Engaged in extensive research in fields like medicine, law, economics, social sciences, and public policy.",
     "research_history": "Harvard is known for its pioneering research in various fields, including medicine, law, economics, and social sciences. It has been a hub for influential researchers and scholars, contributing to advancements in numerous disciplines.",
     "sports": "Football, Tennis, Badminton",
-    "sportsDetail": "Their star player's remarkable performance led to a thrilling last-second shot that sealed victory in the Final Four. In the Championship game, they defeated a long-standing basketball powerhouse, capping off an incredible sports success for the university."
+    "sports_detail": "Their star player's remarkable performance led to a thrilling last-second shot that sealed victory in the Final Four. In the Championship game, they defeated a long-standing basketball powerhouse, capping off an incredible sports success for the university."
   },
   {
     "id": 2,
@@ -25,7 +25,7 @@
     "research": " Renowned for its research in areas like computer science, biomedical sciences, energy, and entrepreneurship.",
     "research_history": "Stanford has a rich research tradition in areas such as computer science, biotechnology, and entrepreneurship. It played a pivotal role in the development of Silicon Valley, fostering innovation and contributing to the growth of the tech industry. Stanford researchers have been involved in important medical discoveries and advancements in engineering.",
     "sports": "Basketball, Cricket, Swimming",
-    "sportsDetail": "Their star player's remarkable performance led to a thrilling last-second shot that sealed victory in the Final Four. In the Championship game, they defeated a long-standing basketball powerhouse, capping off an incredible sports success for the university."
+    "sports_detail": "Their star player's remarkable performance led to a thrilling last-second shot that sealed victory in the Final Four. In the Championship game, they defeated a long-standing basketball powerhouse, capping off an incredible sports success for the university."
   },
   {
     "id": 3,
@@ -39,6 +39,6 @@
     "research": "A leading research institution focusing on engineering, robotics, and renewable energy.    ",
     "research_history": " Berkeley is renowned for its research in fields such as biology, chemistry, environmental science, and public health. It has been involved in groundbreaking work in areas like biotechnology and green energy.",
     "sports": "Volleyball, Basketball, Cricket",
-    "sportsDetail": "Their star player's remarkable performance led to a thrilling last-second shot that sealed victory in the Final Four. In the Championship game, they defeated a long-standing basketball powerhouse, capping off an incredible sports success for the university."
+    "sports_detail": "Their star player's remarkable performance led to a thrilling last-second shot that sealed victory in the Final Four. In the Championship game, they defeated a long-standing basketball powerhouse, capping off an incredible sports success for the university."
   }
 ]
