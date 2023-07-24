@@ -21,7 +21,7 @@ const CollegeCard = () => {
   };
   return (
     <div>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center mx-2">
         <div>
           <input
             onChange={(e) => setSearchName(e.target.value)}
@@ -43,7 +43,7 @@ const CollegeCard = () => {
         {cards.map((collegeCard) => (
           <div
             key={collegeCard._id}
-            className="card mb-16 w-96 bg-base-100 shadow-xl"
+            className="card mb-16 w-full lg:w-96 mx-auto  bg-base-100 shadow-xl"
           >
             <figure>
               <img src={collegeCard.img} alt="Shoes" />

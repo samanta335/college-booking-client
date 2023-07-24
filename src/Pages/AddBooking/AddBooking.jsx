@@ -60,9 +60,9 @@ const AddBooking = () => {
   };
 
   return (
-    <div className="w-full px-32 mt-20">
+    <div className="w-full px-4 lg:px-32 mt-20">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex my-4">
+        <div className=" lg:flex md:flex my-4">
           <div className="form-control mr-4 w-full max-w-xs">
             <label className="label">
               <span className="label-text font-semibold">Candidate Name</span>
@@ -87,7 +87,7 @@ const AddBooking = () => {
             />
           </div>
         </div>
-        <div className="flex my-4">
+        <div className="lg:flex md:flex my-4">
           <div className="form-control mr-4 w-full max-w-xs focus:outline-none">
             <label className="label">
               <span className="label-text font-semibold">Subject</span>
@@ -110,7 +110,7 @@ const AddBooking = () => {
             />
           </div>
         </div>
-        <div className="flex my-4">
+        <div className="lg:flex md:flex my-4">
           <div className="form-control w-full  max-w-xs">
             <label className="label">
               <span className="label-text font-semibold">Phone Number</span>
@@ -122,7 +122,7 @@ const AddBooking = () => {
               className="input input-bordered w-full max-w-xs focus:outline-none"
             />
           </div>
-          <div className="form-control w-full ml-4 max-w-xs">
+          <div className="form-control w-full lg:ml-4 max-w-xs">
             <label className="label">
               <span className="label-text font-semibold">Address</span>
             </label>
@@ -133,7 +133,7 @@ const AddBooking = () => {
               className="input input-bordered w-full max-w-xs focus:outline-none"
             />
           </div>
-          <div className="form-control w-full ml-4 max-w-xs">
+          <div className="form-control w-full lg:ml-4 max-w-xs">
             <label className="label">
               <span className="label-text font-semibold ">Date Of Birth</span>
             </label>

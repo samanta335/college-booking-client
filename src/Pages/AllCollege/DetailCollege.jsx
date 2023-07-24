@@ -1,3 +1,4 @@
+import { Rating } from "@smastrom/react-rating";
 import { useLoaderData } from "react-router-dom";
 
 const DetailCollege = () => {
@@ -18,9 +19,9 @@ const DetailCollege = () => {
             <span className="font-semibold text-lg">Admission: </span>
             {details.admission_date}
           </p>
-          <p className="text-black">
-            <span className="font-semibold text-lg">Rating :</span>{" "}
-            {details.rating}
+          <p className="text-black flex items-center">
+            <span className="font-semibold mr-2 text-lg">Ratings: </span>
+            <Rating style={{ maxWidth: 100 }} value={details.rating} readOnly />
           </p>
           <p className="text-black">
             <span className="font-semibold text-lg">Research Number:</span>{" "}

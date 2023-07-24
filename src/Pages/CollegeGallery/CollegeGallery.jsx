@@ -1,5 +1,4 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -18,7 +17,7 @@ const CollegeGallery = () => {
           clickable: true,
         }}
         modules={[Pagination]}
-        className="mySwiper my-16"
+        className="container mySwiper my-16"
       >
         <SwiperSlide>
           <img

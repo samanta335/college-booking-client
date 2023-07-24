@@ -5,8 +5,8 @@ const Research = () => {
         Research Paper Link
       </h1>
 
-      <div className="grid grid-cols-3 my-14">
-        <div className="card w-96 bg-base-100 shadow-lg image-full">
+      <div className="grid lg:grid-cols-3 my-14 gap-4 ">
+        <div className="card w-4/5 lg:w-96 mx-auto bg-base-100 shadow-lg image-full">
           <figure>
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx7IZLRJtvme6poQz8cdIPWcjBIvPYyMIGROt_4rgJ_RJfg6AQYZypYaiW-2C0k6Mp_PE&usqp=CAU"
@@ -22,7 +22,7 @@ const Research = () => {
             </a>
           </div>
         </div>
-        <div className="card w-96 bg-base-100 shadow-lg image-full">
+        <div className="card w-4/5 lg:w-96 mx-auto bg-base-100 shadow-lg image-full">
           <figure>
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT9u4YFT-omeLVelXqWlFgaClALpHvj4rTEYpwrsutmlKk3KZQ1voLPdjsphOE6LtrRro&usqp=CAU"
@@ -38,7 +38,7 @@ const Research = () => {
             </a>
           </div>
         </div>
-        <div className="card w-96 bg-base-100 shadow-lg image-full">
+        <div className="card w-4/5 lg:w-96 mx-auto bg-base-100 shadow-lg image-full">
           <figure>
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3gS4piVodfYTggi9eOKHNyxbibqsAbO7Ea5ERKUnFc-yIDjj3Qn-77FmM_Bm9TUJu0Qc&usqp=CAU"

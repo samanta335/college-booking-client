@@ -1,3 +1,4 @@
+import { Rating } from "@smastrom/react-rating";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -14,7 +15,7 @@ const AllCollege = () => {
       {cards.map((collegeCard) => (
         <div
           key={collegeCard._id}
-          className="card mb-16 w-96 bg-base-100 shadow-xl"
+          className="card mb-16 w-full lg:w-96 bg-base-100 shadow-xl"
         >
           <figure>
             <img src={collegeCard.img} alt="Shoes" />
@@ -27,9 +28,13 @@ const AllCollege = () => {
               <span className="font-semibold text-lg">Admission Date: </span>
               {collegeCard.admission_date}
             </p>
-            <p className="text-black">
-              <span className="font-semibold text-lg">Ratings: </span>
-              {collegeCard.rating}
+            <p className="text-black flex items-center">
+              <span className="font-semibold mr-2 text-lg">Ratings: </span>
+              <Rating
+                style={{ maxWidth: 100 }}
+                value={collegeCard.rating}
+                readOnly
+              />
             </p>
             <p className="text-black">
               <span className="font-semibold text-lg">Research Number:</span>

@@ -32,7 +32,7 @@ const ReviewField = () => {
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="border border-accent w-1/2 mt-36 mx-auto p-10">
+        <div className="border border-accent w-full lg:w-1/2 mt-36 mx-auto p-10">
           <div className="form-control my-4 w-full ">
             <label className="label">
               <span className="label-text font-semibold">College Name</span>
@@ -46,7 +46,7 @@ const ReviewField = () => {
           </div>
           <textarea
             {...register("review")}
-            className="input input-bordered w-1/2 min-h-[150px] border-purple-500 p-5  focus:outline-none  bg-inherit "
+            className="input input-bordered w-4/5 lg:w-1/2 min-h-[150px] border-purple-500 p-5  focus:outline-none  bg-inherit "
             placeholder="Write Review about college"
           />
           <div style={{ maxWidth: 180, width: "100%" }}>

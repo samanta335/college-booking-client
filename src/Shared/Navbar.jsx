@@ -47,9 +47,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-2xl text-purple-800 uppercase">
-          College Booking
-        </a>
+        <a className=" text-2xl text-purple-800 uppercase">College Booking</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-base font-medium">
@@ -70,9 +68,9 @@ const Navbar = () => {
       <div className="navbar-end">
         {user ? (
           <>
-            <a href="" className="uppercase text-black">
+            <Link to="/profile" className="uppercase text-black lg:">
               {user.displayName}
-            </a>
+            </Link>
 
             <Link className="btn btn-primary ml-5" onClick={handleLogOut}>
               Logout

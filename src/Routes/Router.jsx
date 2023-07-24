@@ -11,6 +11,7 @@ import AllCollege from "../Pages/AllCollege/AllCollege";
 import Error from "../Pages/Home/Error/Error";
 import DetailCollege from "../Pages/AllCollege/DetailCollege";
 import PrivateRoute from "./PrivateRoute";
+import Profile from "../Pages/Profile/Profile";
 
 const router = createBrowserRouter([
   {
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
             <MyCollege></MyCollege>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/profile",
+        element: <Profile></Profile>,
       },
     ],
   },
