@@ -39,7 +39,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/collegeCard/${params.id}`),
+          fetch(
+            `https://college-booking-liard.vercel.app/collegeCard/${params.id}`
+          ),
       },
       {
         path: "/college",
@@ -53,7 +55,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allCollege/${params.id}`),
+          fetch(
+            `https://college-booking-liard.vercel.app/allCollege/${params.id}`
+          ),
       },
       {
         path: "/admission",

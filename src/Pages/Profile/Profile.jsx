@@ -10,7 +10,7 @@ const Profile = () => {
   const onSubmit = (data) => {
     console.log(data);
 
-    fetch("http://localhost:5000/users", {
+    fetch("https://college-booking-liard.vercel.app/users", {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

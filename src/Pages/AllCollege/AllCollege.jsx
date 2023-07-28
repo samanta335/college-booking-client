@@ -6,7 +6,7 @@ const AllCollege = () => {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allCollege")
+    fetch("https://college-booking-liard.vercel.app/allCollege")
       .then((res) => res.json())
       .then((data) => setCards(data));
   }, []);

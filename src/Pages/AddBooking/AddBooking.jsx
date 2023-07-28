@@ -34,7 +34,7 @@ const AddBooking = () => {
             image: imgUrl,
           };
           console.log(classInfo);
-          fetch("http://localhost:5000/admissionCollege", {
+          fetch("https://college-booking-liard.vercel.app/admissionCollege", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(classInfo),
