@@ -1,49 +1,53 @@
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProvider";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import { useLoaderData, useParams } from "react-router-dom";
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
-
   const { register, handleSubmit, reset } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
+  
 
-    fetch("https://college-booking-liard.vercel.app/users", {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.modifiedCount > 0) {
-          reset();
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "update done Successfully",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        }
+ 
+
+  const onSubmit = async (updatedData) => {
+    try {
+      const response = await fetch(`http://localhost:5000/admission/${Id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedData),
       });
+
+      if (response.ok) {
+        alert("User updated successfully!");
+        setUserData(updatedData);
+        document.getElementById("my_modal_5").close(); // Close modal after updating
+      } else {
+        alert("Failed to update user.");
+      }
+    } catch (error) {
+      console.error("Error updating user:", error);
+    }
   };
+
+
+
   return (
     <div className="w-full px-4 lg:px-32 mt-20">
-      <div className=" my-4">
-        <div className="form-control mr-4 w-full lg:max-w-xs">
+      
+      <div  className=" my-4">
+       <div>
+       <div className="form-control mr-4 w-full lg:max-w-xs">
           <label className="label">
             <span className="label-text font-semibold">User Name</span>
           </label>
           <input
-            {...register("name", { required: true })}
+            {...register("name",)}
             type="text"
             value={user?.displayName}
-            placeholder="Type here"
             className="input input-bordered w-full max-w-xs focus:outline-none"
           />
         </div>
@@ -52,16 +56,18 @@ const Profile = () => {
             <span className="label-text font-semibold">User Email</span>
           </label>
           <input
-            {...register("email", { required: true })}
+            {...register("email", )}
             type="email"
-            value={user?.email}
-            placeholder="Type here"
+           value={user?.email}
             className="input input-bordered w-full lg:max-w-xs focus:outline-none"
           />
         </div>
+       </div>
+       <div>
+       </div>
       </div>
       <button
-        className="btn btn-sm btn-primary  "
+        className="btn btn-sm btn-primary px-5  my-8"
         onClick={() => window.my_modal_5.showModal()}
       >
         Edit
@@ -107,10 +113,10 @@ const Profile = () => {
               </div>
               <div className="form-control w-full ml-4 max-w-xs">
                 <label className="label">
-                  <span className="label-text font-semibold">College Name</span>
+                  <span className="label-text font-semibold">Profile Name</span>
                 </label>
                 <input
-                  {...register("collegeName", { required: true })}
+                  {...register("ProfileName", { required: true })}
                   type="text"
                   placeholder="Type here"
                   className="input input-bordered w-full max-w-xs focus:outline-none"
@@ -120,7 +126,7 @@ const Profile = () => {
 
             <div className="modal-action">
               <input
-                className="btn btn-primary w-1/4 mt-4"
+                className="btn btn-sm btn-primary w-1/4 mt-4"
                 type="submit"
                 value="Submit"
               />

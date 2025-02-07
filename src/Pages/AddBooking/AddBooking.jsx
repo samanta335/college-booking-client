@@ -1,62 +1,78 @@
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 
-const img_hosting_token = import.meta.env.VITE_IMAGE;
 
 const AddBooking = () => {
   const { user } = useContext(AuthContext);
-
   const { register, handleSubmit, reset } = useForm();
-  const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
 
+  const [file, setFile] = useState(null);
+  const [preview, setPreview] = useState("");
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setFile(reader.result); // Convert to Base64
+      setPreview(reader.result); // For preview
+    };
+  };
   const onSubmit = (data) => {
-    const formData = new FormData();
-    formData.append("image", data.image[0]);
+    
+    // const formData = new FormData();
+    // formData.append("image", data.image[0]);
+    
+  fetch("http://localhost:5000/upload", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ image: file })
 
-    fetch(img_hosting_url, {
-      method: "POST",
-      body: formData,
-    })
-      .then((res) => res.json())
-      .then((img) => {
-        if (img) {
-          const imgUrl = img.data.display_url;
-          const { name, email, address, birthDate, number, subject } = data;
-          const classInfo = {
-            name,
-            address,
-            email,
-            subject,
-            birthDate,
-            number,
-            image: imgUrl,
-          };
-          console.log(classInfo);
-          fetch("https://college-booking-liard.vercel.app/admissionCollege", {
+  })
+    .then((res) => res.json())
+    .then((img) => {
+      if (img) {
+        const imageName = data.image[0].name
+        const { name, email, address, birthDate, number, subject } = data;
+        const classInfo = {
+          name,
+          address,
+          email,
+          subject,
+          birthDate,
+          number,
+          image: imageName,
+        };
+  console.log(classInfo)
+          fetch("http://localhost:5000/admissionCollege", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(classInfo),
+            body:  JSON.stringify(classInfo),
           })
             .then((res) => res.json())
             .then((result) => {
-              console.log(result);
+              // console.log(result);
               if (result.insertedId) {
                 reset();
                 Swal.fire({
                   position: "top-end",
                   icon: "success",
-                  title: "Booking done Successfully",
+                  title: "Submitted",
                   showConfirmButton: false,
                   timer: 1500,
                 });
               }
             });
-        }
-      });
-
+       
+          }
+        });
+          
     // console.log(data);
+
   };
 
   return (
@@ -68,7 +84,7 @@ const AddBooking = () => {
               <span className="label-text font-semibold">Candidate Name</span>
             </label>
             <input
-              {...register("name", { required: true })}
+              {...register("name", )}
               type="text"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs focus:outline-none"
@@ -93,12 +109,13 @@ const AddBooking = () => {
               <span className="label-text font-semibold">Subject</span>
             </label>
             <input
-              {...register("subject", { required: true })}
+              {...register("subject", )}
               type="text"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs focus:outline-none"
             />
           </div>
+        
           <div className="form-control w-full max-w-xs focus:outline-none">
             <label className="label">
               <span className="label-text font-semibold">Candidate Image</span>
@@ -106,6 +123,8 @@ const AddBooking = () => {
             <input
               {...register("image", { required: true })}
               type="file"
+              accept="image/jpg, image/png"
+              onChange={handleFileChange} 
               className="file-input file-input-bordered w-full max-w-xs focus:outline-none"
             />
           </div>
@@ -116,7 +135,7 @@ const AddBooking = () => {
               <span className="label-text font-semibold">Phone Number</span>
             </label>
             <input
-              {...register("number", { required: true })}
+              {...register("number", )}
               type="number"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs focus:outline-none"
@@ -127,7 +146,7 @@ const AddBooking = () => {
               <span className="label-text font-semibold">Address</span>
             </label>
             <input
-              {...register("address", { required: true })}
+              {...register("address",)}
               type="text"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs focus:outline-none"
@@ -138,7 +157,7 @@ const AddBooking = () => {
               <span className="label-text font-semibold ">Date Of Birth</span>
             </label>
             <input
-              {...register("birthDate", { required: true })}
+              {...register("birthDate",)}
               type="date"
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs focus:outline-none"
@@ -147,12 +166,18 @@ const AddBooking = () => {
         </div>
         <div className="text-center ">
           <input
-            className="btn btn-primary w-1/4 mt-4"
+            className="btn btn-primary w-1/4 my-4"
             type="submit"
             value="Submit"
           />
         </div>
       </form>
+      {/* {preview && (
+        <div>
+          <h3>Preview:</h3>
+          <img src={preview} alt="Preview" width="200" />
+        </div>
+      )} */}
     </div>
   );
 };

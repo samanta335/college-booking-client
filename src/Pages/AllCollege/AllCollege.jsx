@@ -6,7 +6,7 @@ const AllCollege = () => {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    fetch("https://college-booking-liard.vercel.app/allCollege")
+    fetch("http://localhost:5000/allCollege")
       .then((res) => res.json())
       .then((data) => setCards(data));
   }, []);
@@ -43,7 +43,7 @@ const AllCollege = () => {
 
             <div className="card-actions justify-end">
               <Link
-                className="btn btn-primary"
+                className="btn btn-sm hover:bg-purple-700 bg-purple-700 text-white"
                 to={`/details/${collegeCard._id}`}
               >
                 Details

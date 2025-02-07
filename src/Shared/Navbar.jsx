@@ -10,7 +10,7 @@ const Navbar = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="navbar z-10 bg-opacity-30 max-w-screen-xl bg-black lg:text-white">
+    <div className="navbar z-10  max-w-screen-xl  ">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -47,7 +47,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <a className=" text-2xl text-purple-800 uppercase">College Booking</a>
+        <a href="/" className=" text-3xl text-purple-800 uppercase">College Booking</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-base font-medium">
@@ -68,16 +68,16 @@ const Navbar = () => {
       <div className="navbar-end">
         {user ? (
           <>
-            <Link to="/profile" className="uppercase text-black lg:">
+            <Link to="/profile" className="uppercase text-black ">
               {user.displayName}
             </Link>
 
-            <Link className="btn btn-primary ml-5" onClick={handleLogOut}>
+            <Link className="btn btn-sm btn-primary ml-5" onClick={handleLogOut}>
               Logout
             </Link>
           </>
         ) : (
-          <Link className="btn btn-primary" to="/login">
+          <Link className="btn btn-sm btn-primary" to="/login">
             Login
           </Link>
         )}

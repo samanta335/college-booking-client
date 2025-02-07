@@ -7,10 +7,12 @@ const MyCollege = () => {
   const [myCollege, setMyCollege] = useState([]);
 
   useEffect(() => {
-    fetch(`https://college-booking-liard.vercel.app/admission/${user?.email}`)
+    fetch(`http://localhost:5000/admission/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setMyCollege(data));
   }, [user]);
+
+  
 
   return (
     <div>
@@ -18,7 +20,7 @@ const MyCollege = () => {
         <table className="table table-compact w-full text-center ">
           <thead>
             <tr>
-              <th>Image</th>
+              {/* <th>Image</th> */}
               <th>Candidate Name</th>
               <th>Candidate Email</th>
               <th>Subject</th>
@@ -30,9 +32,10 @@ const MyCollege = () => {
           <tbody className="p-5">
             {myCollege.map((college) => (
               <tr key={college._id}>
-                <td>
+                {/* <td>
                   <div className="flex items-center ">
-                    <div className="avatar">
+                    
+                  <div className="avatar">
                       <div className="mask mask-squircle w-10 h-12 ml-14">
                         <img
                           src={college.image}
@@ -40,8 +43,9 @@ const MyCollege = () => {
                         />
                       </div>
                     </div>
+                     
                   </div>
-                </td>
+                </td> */}
                 <td>{college.name}</td>
                 <td>{college.email}</td>
                 <td>{college.subject}</td>

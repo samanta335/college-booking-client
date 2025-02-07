@@ -7,13 +7,13 @@ const CollegeCard = () => {
   const [searchName, setSearchName] = useState([]);
 
   useEffect(() => {
-    fetch("https://college-booking-liard.vercel.app/collegeCard")
+    fetch("http://localhost:5000/collegeCard")
       .then((res) => res.json())
       .then((data) => setCards(data));
   }, []);
 
   const handleSearch = () => {
-    fetch(`https://college-booking-liard.vercel.app/nameSearch/${searchName}`)
+    fetch(`http://localhost:5000/nameSearch/${searchName}`)
       .then((res) => res.json())
       .then((data) => {
         setCards(data);
@@ -21,18 +21,18 @@ const CollegeCard = () => {
   };
   return (
     <div>
-      <div className="flex justify-center items-center mx-2">
+      <div className="flex justify-center items-center">
         <div>
           <input
             onChange={(e) => setSearchName(e.target.value)}
             type="text"
-            placeholder="Type College Name"
-            className="input input-bordered input-accent focus:outline-none mt-24 mx-auto w-full max-w-xs"
+            placeholder="Search College "
+            className="input input-bordered border-purple-300 border-2 text-lg text-center focus:outline-none mt-24 px-20 "
           />
         </div>
         <div>
           <button
-            className="btn btn-sm btn-accent mt-24 ml-2"
+            className="btn btn-sm hover:bg-purple-700 bg-purple-700 text-white mt-24 ml-2"
             onClick={handleSearch}
           >
             Search
@@ -43,7 +43,7 @@ const CollegeCard = () => {
         {cards.map((collegeCard) => (
           <div
             key={collegeCard._id}
-            className="card mb-16 w-full lg:w-96 mx-auto  bg-base-100 shadow-xl"
+            className="card mb-16 w-full lg:w-96 mx-auto  bg-base-100 shadow-lg"
           >
             <figure>
               <img src={collegeCard.img} alt="Shoes" />
@@ -70,9 +70,9 @@ const CollegeCard = () => {
                 <span className="font-semibold text-lg">Sports: </span>
                 {collegeCard.sports}
               </p>
-              <div className="card-actions justify-end">
+              <div className="card-actions  justify-end">
                 <Link
-                  className="btn btn-primary"
+                  className="btn btn-sm  hover:bg-purple-700 bg-purple-700 text-white"
                   to={`/collegeCard/${collegeCard._id}`}
                 >
                   Details

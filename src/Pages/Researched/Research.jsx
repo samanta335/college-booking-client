@@ -1,7 +1,7 @@
 const Research = () => {
   return (
     <div>
-      <h1 className="text-2xl mt-16 text-purple-700 font-semibold text-center">
+      <h1 className="text-3xl mt-16 text-purple-700 font-semibold text-center">
         Research Paper Link
       </h1>
 
@@ -13,12 +13,12 @@ const Research = () => {
               alt="Shoes"
             />
           </figure>
-          <div className="card-body">
+          <div className="card-body  ">
             <a
               href="https://drodrik.scholar.harvard.edu/research-papers"
-              className="underline text-white mx-auto "
+              className="underline transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-amber-200 text-white mx-auto "
             >
-              <h2 className="card-title">HARVARD COLLEGE</h2>
+              <h2 className="card-title text-2xl">HARVARD COLLEGE</h2>
             </a>
           </div>
         </div>
@@ -29,12 +29,12 @@ const Research = () => {
               alt="Shoes"
             />
           </figure>
-          <div className="card-body">
+          <div className="card-body ">
             <a
               href="https://faculty.som.yale.edu/peterschott/research-papers/"
-              className="underline text-white mx-auto "
+              className="underline transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-amber-200 text-white mx-auto "
             >
-              <h2 className="card-title">YALE COLLEGE</h2>
+              <h2 className="card-title text-2xl">YALE COLLEGE</h2>
             </a>
           </div>
         </div>
@@ -45,12 +45,12 @@ const Research = () => {
               alt="Shoes"
             />
           </figure>
-          <div className="card-body">
+          <div className="card-body ">
             <a
               href="https://www.gsb.stanford.edu/programs/phd/academic-experience/degree-requirements/research-papers"
-              className="underline text-white mx-auto "
+              className="underline transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-amber-200 text-white mx-auto "
             >
-              <h2 className="card-title">STANFORD COLLEGE</h2>
+              <h2 className="card-title text-2xl">STANFORD COLLEGE</h2>
             </a>
           </div>
         </div>

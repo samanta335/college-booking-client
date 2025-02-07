@@ -7,8 +7,8 @@ import { Pagination } from "swiper/modules";
 const CollegeGallery = () => {
   return (
     <>
-      <h1 className="text-2xl font-semibold mt-10 text-purple-700 text-center">
-        College's Graduate Pictures
+      <h1 className="text-3xl font-semibold mt-10 text-purple-700 text-center">
+        College Graduate's Pictures
       </h1>
       <Swiper
         slidesPerView={3}

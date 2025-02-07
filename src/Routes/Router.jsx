@@ -40,7 +40,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://college-booking-liard.vercel.app/collegeCard/${params.id}`
+            `http://localhost:5000/collegeCard/${params.id}`
           ),
       },
       {
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://college-booking-liard.vercel.app/allCollege/${params.id}`
+            `http://localhost:5000/allCollege/${params.id}`
           ),
       },
       {
@@ -78,6 +78,10 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile></Profile>,
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/admission/${params.id}`
+          ),
       },
     ],
   },

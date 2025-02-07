@@ -17,7 +17,7 @@ const SocialLogin = () => {
         name: loggedUser.displayName,
         email: loggedUser.email,
       };
-      fetch("https://college-booking-liard.vercel.app/users", {
+      fetch("http://localhost:5000/users", {
         method: "POST",
         headers: {
           "content-type": "application/json",

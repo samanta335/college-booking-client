@@ -24,7 +24,7 @@ const SignUp = () => {
       updateUserProfile(data.name, data.photoURL)
         .then(() => {
           const saveUser = { name: data.name, email: data.email };
-          fetch("https://college-booking-liard.vercel.app/users", {
+          fetch("http://localhost:5000/users", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -51,15 +51,14 @@ const SignUp = () => {
   };
 
   return (
-    <>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Sign up now!</h1>
-          </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+    <div className="bg-base-200 min-h-screen">
+       <div className="hero  ">
+        <div className="hero-content ">
+          
+          <div className="card  w-full mt-24 bg-base-100  shadow-2xl ">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-              <div className="form-control">
+             <div className="lg:flex gap-8">
+             <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
                 </label>
@@ -88,6 +87,8 @@ const SignUp = () => {
                   <span className="text-red-600">Photo URL is required</span>
                 )}
               </div>
+             </div>
+             <div className="lg:flex gap-8"> 
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -132,11 +133,8 @@ const SignUp = () => {
                     and one special character.
                   </p>
                 )}
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
+              </div>
+                
               </div>
               <div className="form-control mt-6">
                 <input
@@ -146,7 +144,7 @@ const SignUp = () => {
                 />
               </div>
             </form>
-            <p className="mx-auto">
+            <p className="mx-auto text-xl">
               <small>
                 Already have an account?{" "}
                 <Link className="underline text-blue-500" to="/login">
@@ -158,7 +156,7 @@ const SignUp = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
