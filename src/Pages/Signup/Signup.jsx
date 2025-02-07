@@ -24,7 +24,7 @@ const SignUp = () => {
       updateUserProfile(data.name, data.photoURL)
         .then(() => {
           const saveUser = { name: data.name, email: data.email };
-          fetch("http://localhost:5000/users", {
+          fetch("https://college-booking-server-delta.vercel.app/users", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -79,7 +79,7 @@ const SignUp = () => {
                 </label>
                 <input
                   type="text"
-                  {...register("photoURL", { required: true })}
+                  {...register("photoURL", )}
                   placeholder="Photo URL"
                   className="input input-bordered"
                 />
@@ -119,20 +119,8 @@ const SignUp = () => {
                 {errors.password?.type === "required" && (
                   <p className="text-red-600">Password is required</p>
                 )}
-                {errors.password?.type === "minLength" && (
-                  <p className="text-red-600">Password must be 6 characters</p>
-                )}
-                {errors.password?.type === "maxLength" && (
-                  <p className="text-red-600">
-                    Password must be less than 20 characters
-                  </p>
-                )}
-                {errors.password?.type === "pattern" && (
-                  <p className="text-red-600">
-                    Password must have one Uppercase one lower case, one number
-                    and one special character.
-                  </p>
-                )}
+                
+               
               </div>
                 
               </div>

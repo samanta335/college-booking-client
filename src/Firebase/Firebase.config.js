@@ -4,15 +4,17 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyD2R8UL7d53kW0gFWDer9fiqveFsHgWmsk",
-  authDomain: "college-booking-85eda.firebaseapp.com",
-  projectId: "college-booking-85eda",
-  storageBucket: "college-booking-85eda.firebasestorage.app",
-  messagingSenderId: "740804737678",
-  appId: "1:740804737678:web:a11072a367d034b1c127df"
+  apiKey: "AIzaSyCinj4QBIzPTMI0VKZhDwVjzcwRiVX0eiw",
+  authDomain: "college-booking-94004.firebaseapp.com",
+  projectId: "college-booking-94004",
+  storageBucket: "college-booking-94004.firebasestorage.app",
+  messagingSenderId: "951514011133",
+  appId: "1:951514011133:web:e22bfa071d37aeca943594",
+  measurementId: "G-8MS7ZRWHNV"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export default app;
+export default (app)

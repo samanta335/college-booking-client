@@ -7,13 +7,13 @@ const CollegeCard = () => {
   const [searchName, setSearchName] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/collegeCard")
+    fetch("https://college-booking-server-delta.vercel.app/collegeCard")
       .then((res) => res.json())
       .then((data) => setCards(data));
   }, []);
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/nameSearch/${searchName}`)
+    fetch(`https://college-booking-server-delta.vercel.app/nameSearch/${searchName}`)
       .then((res) => res.json())
       .then((data) => {
         setCards(data);

@@ -40,7 +40,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/collegeCard/${params.id}`
+            `https://college-booking-server-delta.vercel.app/collegeCard/${params.id}`
           ),
       },
       {
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/allCollege/${params.id}`
+            `https://college-booking-server-delta.vercel.app/allCollege/${params.id}`
           ),
       },
       {
@@ -80,7 +80,7 @@ const router = createBrowserRouter([
         element: <Profile></Profile>,
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/admission/${params.id}`
+            `https://college-booking-server-delta.vercel.app/admission/${params.id}`
           ),
       },
     ],

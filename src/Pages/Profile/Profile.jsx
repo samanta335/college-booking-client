@@ -13,7 +13,7 @@ const Profile = () => {
 
   const onSubmit = async (updatedData) => {
     try {
-      const response = await fetch(`http://localhost:5000/admission/${Id}`, {
+      const response = await fetch(`https://college-booking-server-delta.vercel.app/admission/${Id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

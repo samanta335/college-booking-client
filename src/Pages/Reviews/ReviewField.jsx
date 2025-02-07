@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const ReviewField = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/review", {
+    fetch("https://college-booking-server-delta.vercel.app/review", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

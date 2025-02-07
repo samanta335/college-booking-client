@@ -27,7 +27,7 @@ const AddBooking = () => {
     // const formData = new FormData();
     // formData.append("image", data.image[0]);
     
-  fetch("http://localhost:5000/upload", {
+  fetch("https://college-booking-server-delta.vercel.app/upload", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ image: file })
@@ -48,7 +48,7 @@ const AddBooking = () => {
           image: imageName,
         };
   console.log(classInfo)
-          fetch("http://localhost:5000/admissionCollege", {
+          fetch("https://college-booking-server-delta.vercel.app/admissionCollege", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body:  JSON.stringify(classInfo),
@@ -121,7 +121,7 @@ const AddBooking = () => {
               <span className="label-text font-semibold">Candidate Image</span>
             </label>
             <input
-              {...register("image", { required: true })}
+              {...register("image", )}
               type="file"
               accept="image/jpg, image/png"
               onChange={handleFileChange} 

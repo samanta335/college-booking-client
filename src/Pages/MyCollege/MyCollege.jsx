@@ -7,7 +7,7 @@ const MyCollege = () => {
   const [myCollege, setMyCollege] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/admission/${user?.email}`)
+    fetch(`https://college-booking-server-delta.vercel.app/admission/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setMyCollege(data));
   }, [user]);
