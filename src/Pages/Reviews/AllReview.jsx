@@ -14,6 +14,7 @@ const AllReview = () => {
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
+  
   return (
     <div className="mt-24">
       <h1 className="text-3xl text-purple-700  font-semibold text-center ">

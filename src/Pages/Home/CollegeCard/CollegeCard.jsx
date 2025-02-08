@@ -27,7 +27,7 @@ const CollegeCard = () => {
             onChange={(e) => setSearchName(e.target.value)}
             type="text"
             placeholder="Search College "
-            className="input input-bordered border-purple-300 border-2 text-lg text-center focus:outline-none mt-24 px-20 "
+            className="input input-bordered border-purple-300 border-2 text-lg text-center focus:outline-none mt-24 px-8 lg:px-20 "
           />
         </div>
         <div>
