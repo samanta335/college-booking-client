@@ -9,7 +9,7 @@ const DetailCollege = () => {
     <div>
       <div className="card mt-24 lg:card-side bg-base-100 shadow-xl">
         <figure>
-          <img className="w-full h-3/6 ml-8" src={details.img} alt="Album" />
+          <img className="w-full h-3/6  mx-4 lg:mx-0 lg:ml-8" src={details.img} alt="Album" />
         </figure>
         <div className="card-body lg:w-1/2 ">
           <h2 className="card-title uppercase text-purple-700">

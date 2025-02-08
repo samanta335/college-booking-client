@@ -47,7 +47,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <a href="/" className=" text-3xl text-purple-800 uppercase">College Booking</a>
+        <a href="/" className=" text-3xl  text-purple-800 uppercase">College Booking</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-base font-medium">
@@ -68,7 +68,7 @@ const Navbar = () => {
       <div className="navbar-end">
         {user ? (
           <>
-            <Link to="/profile" className="uppercase text-black ">
+            <Link to="/profile" className="uppercase  text-black ">
               {user.displayName}
             </Link>
 
